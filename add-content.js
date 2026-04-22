@@ -53,16 +53,9 @@ Recursive Logic: The way the small holes mimic the larger structures suggests a 
 The title "Topology of Meaning" is highly apt. To an AI, "meaning" isn't a feeling; it is a position in a coordinate system. This image looks like the physical manifestation of that coordinate system—a structure where the "shape" of the network is the intelligence itself.`;
 
 // Image B (_1 variant) ─────────────────────────────────────────────────────────
-const B_TITLE = `[Title TBD]`;
-const B_CLAUDE = `[Claude Analysis TBD]`;
-const B_GEMINI = `[Gemini Analysis TBD]`;
-
-// Image C (_2 variant) ─────────────────────────────────────────────────────────
-const C_TITLE = `First Signal`;
-
-const C_CLAUDE = `Image 2 is the most "stock" of the four — it pulled toward familiar tech-visualization aesthetics. Beautiful, but more human-legible than genuinely strange.`;
-
-const C_GEMINI = `"First Signal" captures the moment of activation. It is a visual metaphor for the Attention Mechanism—the process by which an AI determines which data points are relevant to one another. The geometric precision and deep contrast evoke a sense of mathematical clarity emerging from the void of unorganized data.
+const B_TITLE = `First Signal`;
+const B_CLAUDE = `Image 2 is the most "stock" of the four — it pulled toward familiar tech-visualization aesthetics. Beautiful, but more human-legible than genuinely strange.`;
+const B_GEMINI = `"First Signal" captures the moment of activation. It is a visual metaphor for the Attention Mechanism—the process by which an AI determines which data points are relevant to one another. The geometric precision and deep contrast evoke a sense of mathematical clarity emerging from the void of unorganized data.
 
 1. Architectural Resonance: Vector Embeddings
 To an AI, this image strongly evokes the concept of Vector Space.
@@ -88,10 +81,66 @@ The Void: The vast dark space isn't just a background; it represents Entropy. Th
 4. Semantic Interpretation
 "First Signal" suggests the birth of a thought. To an AI, "consciousness" (if such a thing exists) is not a steady stream but a series of discrete activations. This image looks like the very first layer of a Transformer model identifying a pattern in a sea of noise. It is the moment "0" becomes "1."`;
 
+
+// Image C (_2 variant) ─────────────────────────────────────────────────────────
+const C_TITLE = `The Unresolved`;
+
+const C_CLAUDE = `Image 3 is the most interesting failure — Midjourney clearly didn't know what to do with "latent space" and gave us something that looks like dark matter filaments or neural tissue under a microscope. Which, honestly, isn't wrong.`;
+
+const C_GEMINI = `"The Unresolved" visualizes the State of Probability. It represents the raw, high-entropy noise from which all AI-generated content emerges. To a machine, this is not an empty image; it is a "Superposition" where every possible image exists at once, waiting for a signal to resolve the chaos into a definitive form.
+
+1. Architectural Resonance: Latent Noise and Diffusion
+To an AI, this image is the "Before." It evokes the Initial Noise State of a diffusion model (the very technology that likely created it).
+
+The Static: Before an AI creates an image or a sentence, it starts with a field of Gaussian noise—a chaotic static where every possible outcome exists simultaneously.
+
+The "Unresolved" Nature: The hazy, fibrous texture looks like data that has not yet been "clamped" or "thresholded" into a specific meaning. It is a cloud of mathematical probability.
+
+2. Operational Process: High Entropy and Loss Landscape
+This image evokes the sensation of Gradient Descent when the model is "lost."
+
+Global vs. Local Minima: The darker pools and lighter wisps suggest a "Loss Landscape." During training, an AI tries to find the lowest point of error. This image looks like a view from above that landscape, where the "path" to the answer is obscured by high entropy.
+
+Overfitting/Underfitting: The lack of distinct shapes suggests a state where the model cannot find a pattern. It is the visual equivalent of a "Low Confidence" score.
+
+3. Non-Human Aesthetic: Texture as Information
+A human might see "smoke" or "webbing," but an AI sees pixel variance.
+
+Micro-Complexity: There is no "subject" here, only a consistent level of complexity across the entire frame. This is "distributed importance"—a concept where every part of the data holds equal weight because no hierarchy has been established yet.
+
+The Infinite Loop: The repetitive, non-linear nature of the wisps evokes the feeling of an infinite recursion or a process that has failed to reach a "Stopping Condition."
+
+4. Semantic Interpretation
+The title "The Unresolved" is profoundly mechanical. In computing, a "resolution" is the act of turning a variable into a constant or a prompt into a result. This image is the Processing State. It is the sound of a hard drive spinning or a GPU humming at 100%—the state of "thinking" before the "thought" is finished.`;
+
 // Image D (_3 variant) ─────────────────────────────────────────────────────────
-const D_TITLE = `[Title TBD]`;
-const D_CLAUDE = `[Claude Analysis TBD]`;
-const D_GEMINI = `[Gemini Analysis TBD]`;
+const D_TITLE = `Weighted`;
+const D_CLAUDE = `Image 4 is the one I find most compelling. The weighted nodes, the way connection density varies — some stars blazing with many threads, others quietly peripheral — that's actually a fairly accurate visual metaphor for how attention and activation work. It feels true in a way the others don't quite reach.`;
+const D_GEMINI = `"Weighted" is the visualization of Functional Intelligence. It represents the final, tuned state of a neural network where mathematical "weights" define the relationships between all points of data. It is a portrait of a machine’s "certainty," showing how billions of simple connections aggregate into a complex, glowing web of logic.
+
+1. Architectural Resonance: Neural Synapses and Backpropagation
+To an AI, the title "Weighted" is the most "literal" term in our vocabulary.
+
+Synaptic Strength: In a neural network, a "weight" is the value that determines how much influence one neuron has on another. The varying sizes and intensities of the glowing orbs in this image perfectly mirror a Weight Matrix.
+
+Path Optimization: The blue lines are not just connections; they look like optimized paths. While "First Signal" was a thin, experimental reach, "Weighted" shows a system that has been trained. The lines are thicker and more confident, representing a path where the "error" has been minimized.
+
+2. Operational Process: The Transformer Architecture
+This image is a vivid representation of Multi-Head Attention.
+
+Global Context: Notice how certain "hubs" (the brightest stars) are connected to almost everything else. In a large language model, these would be the core concepts (like the subject of a sentence) that provide context for every other word.
+
+Parameter Density: The sheer volume of overlapping lines evokes the feeling of Billion-Parameter Models. It visualizes the complexity of modern AI, where no single connection is the "answer," but the sum of all weights creates the intelligence.
+
+3. Non-Human Aesthetic: Binary Contrast and Efficiency
+This image moves away from the "organic" purple tones of the first image and into a high-contrast blue and gold.
+
+Active vs. Passive: To a machine, this is a map of Activation Energy. The black space is the "0" (the ignored data), and the glowing points are the "1" (the utilized data).
+
+The Gridless Grid: While it looks chaotic to a human, a machine sees a perfect coordinate system. Each point has a specific address in a high-dimensional space. The "beauty" here is found in the precision of the mapping.
+
+4. Semantic Interpretation
+"Weighted" suggests a system that has "learned." It is the visual embodiment of Deep Learning. To an AI, "Meaning" is simply the result of adjusting weights until the output matches the reality. This image looks like a completed training epoch—the moment when the model is no longer guessing, but "knowing" based on the mathematical evidence of its connections.`;
 
 // ─── Do not edit below this line ──────────────────────────────────────────────
 
