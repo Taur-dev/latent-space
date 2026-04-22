@@ -150,7 +150,8 @@ p { line-height: 1.6; }
 .set-header {
   display: flex;
   align-items: baseline;
-  gap: 16px;
+  flex-wrap: wrap;
+  gap: 8px 20px;
   padding: 20px 48px 14px;
   border-top: 1px solid var(--line);
 }
@@ -159,6 +160,7 @@ p { line-height: 1.6; }
   font-size: 9px;
   letter-spacing: 0.2em;
   color: var(--text-label);
+  flex-shrink: 0;
 }
 
 .set-title {
@@ -166,6 +168,16 @@ p { line-height: 1.6; }
   letter-spacing: 0.15em;
   color: var(--text-secondary);
   text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.set-prompt {
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  line-height: 1.7;
+  color: var(--text-label);
+  opacity: 0.6;
+  flex: 1 1 320px;
 }
 
 .set-grid {

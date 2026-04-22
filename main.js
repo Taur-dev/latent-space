@@ -7,7 +7,6 @@ const lightbox     = document.getElementById('lightbox');
 const lbImg        = document.getElementById('lightbox-img');
 const lbHudId      = document.getElementById('lightbox-hud-id');
 const panelTitle   = document.getElementById('panel-title');
-const panelPrompt  = document.getElementById('panel-prompt');
 const panelClaude  = document.getElementById('panel-claude');
 const panelGemini  = document.getElementById('panel-gemini');
 const panelMeta    = document.getElementById('panel-meta');
@@ -65,9 +64,12 @@ function buildGallery(sets) {
 
     const header = document.createElement('div');
     header.className = 'set-header';
+    const promptText = set.prompt && !set.prompt.startsWith('[')
+      ? `<span class="set-prompt">${set.prompt}</span>` : '';
     header.innerHTML = `
       <span class="set-number">SET ${String(set.set_number).padStart(2, '0')}</span>
       ${set.set_title ? `<span class="set-title">${set.set_title}</span>` : ''}
+      ${promptText}
     `;
 
     const grid = document.createElement('div');
@@ -75,7 +77,7 @@ function buildGallery(sets) {
 
     set.images.forEach(image => {
       const globalIdx = allImages.length;
-      allImages.push({ ...image, prompt: set.prompt });
+      allImages.push(image);
 
       const card = document.createElement('div');
       card.className = 'thumb-card';
@@ -124,7 +126,6 @@ function openLightbox(idx) {
   lbImg.alt = image.title;
   lbHudId.textContent = `ID:${image.id}`;
   panelTitle.textContent  = image.title;
-  panelPrompt.textContent = image.prompt;
   panelClaude.textContent = image.claude_perspective;
   panelGemini.textContent = image.gemini_perspective;
   panelMeta.textContent   = `SET ${String(image.set_number).padStart(2, '0')} · ${image.id}`;
