@@ -348,6 +348,7 @@ p { line-height: 1.6; }
   font-size: 12px;
   line-height: 1.65;
   color: var(--text-primary);
+  white-space: pre-wrap;
 }
 
 #panel-title.panel-value {

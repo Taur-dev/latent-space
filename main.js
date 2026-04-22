@@ -75,7 +75,7 @@ function buildGallery(sets) {
 
     set.images.forEach(image => {
       const globalIdx = allImages.length;
-      allImages.push(image);
+      allImages.push({ ...image, prompt: set.prompt });
 
       const card = document.createElement('div');
       card.className = 'thumb-card';
