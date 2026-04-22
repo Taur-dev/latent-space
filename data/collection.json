@@ -22,7 +22,7 @@
           "set_number": 1,
           "filename": "images/web/set-01/01-b.webp",
           "title": "[Title TBD]",
-          "gemini_perspective": "[Analysis TBD]",
+          "gemini_perspective": "[Gemini Analysis TBD]",
           "claude_perspective": "[Claude Analysis TBD]"
         },
         {
@@ -38,7 +38,7 @@
           "set_number": 1,
           "filename": "images/web/set-01/01-d.webp",
           "title": "[Title TBD]",
-          "gemini_perspective": "[Analysis TBD]",
+          "gemini_perspective": "[Gemini Analysis TBD]",
           "claude_perspective": "[Claude Analysis TBD]"
         }
       ],
