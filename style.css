@@ -175,8 +175,9 @@ p { line-height: 1.6; }
   font-size: 9px;
   letter-spacing: 0.06em;
   line-height: 1.7;
-  color: var(--text-label);
-  opacity: 0.6;
+  color: var(--accent);
+  opacity: 0.75;
+  text-shadow: 0 0 12px rgba(0, 229, 255, 0.35);
   flex: 1 1 320px;
 }
 
