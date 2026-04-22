@@ -149,7 +149,7 @@ p { line-height: 1.6; }
 
 .set-header {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   flex-wrap: wrap;
   gap: 8px 20px;
   padding: 20px 48px 14px;
@@ -176,8 +176,9 @@ p { line-height: 1.6; }
   letter-spacing: 0.06em;
   line-height: 1.7;
   color: var(--accent);
-  opacity: 0.75;
-  text-shadow: 0 0 12px rgba(0, 229, 255, 0.35);
+  border: 1px solid var(--accent);
+  box-shadow: 0 0 12px var(--accent-glow);
+  padding: 4px 10px;
   flex: 1 1 320px;
 }
 
