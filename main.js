@@ -8,6 +8,7 @@ const lbImg        = document.getElementById('lightbox-img');
 const lbHudId      = document.getElementById('lightbox-hud-id');
 const panelTitle   = document.getElementById('panel-title');
 const panelPrompt  = document.getElementById('panel-prompt');
+const panelClaude  = document.getElementById('panel-claude');
 const panelGemini  = document.getElementById('panel-gemini');
 const panelMeta    = document.getElementById('panel-meta');
 
@@ -124,6 +125,7 @@ function openLightbox(idx) {
   lbHudId.textContent = `ID:${image.id}`;
   panelTitle.textContent  = image.title;
   panelPrompt.textContent = image.prompt;
+  panelClaude.textContent = image.claude_perspective;
   panelGemini.textContent = image.gemini_perspective;
   panelMeta.textContent   = `SET ${String(image.set_number).padStart(2, '0')} · ${image.id}`;
 
