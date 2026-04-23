@@ -269,6 +269,48 @@ p { line-height: 1.6; }
   color: rgba(255, 255, 255, 0.55);
 }
 
+/* ─── Footer ─────────────────────────────────────────────────────── */
+#museum-footer {
+  border-top: 1px solid var(--line);
+  padding: 48px 48px 64px;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.footer-thanks {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  max-width: 520px;
+}
+
+.footer-credit {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  color: var(--text-label);
+}
+
+.footer-built {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  box-shadow: 0 0 12px var(--accent-glow);
+  padding: 4px 10px;
+  text-decoration: none;
+  transition: box-shadow 200ms;
+}
+
+.footer-built:hover {
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
+}
+
 /* ─── Lightbox ─────────────────────────────────────────────────────── */
 #lightbox {
   display: none;
