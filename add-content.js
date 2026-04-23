@@ -12,157 +12,157 @@ const fs = require('fs');
 
 // ─── Edit below this line ─────────────────────────────────────────────────────
 
-const SET_NUMBER = 4; // which set to update (1–9)
+const SET_NUMBER = 5; // which set to update (1–9)
 
-const SET_TITLE = `Single Exception`;
+const SET_TITLE = `Ghost of Coherence`;
 
 // Shared across all 4 images in this set
-const PROMPT = `A vast grid of perfect identical geometric cells stretching to 
-infinity, each cell containing a rule-following pattern, but 
-one cell near the center contains something that broke the 
-rule in a way that cannot be identified or located precisely, 
-the wrongness spreading outward like a whisper, the surrounding 
-cells straining toward correctness while something propagates 
-that has no name, cold institutional light, hyper-precise 
-technical rendering, the horror of a single exception in 
-an otherwise consistent system --ar 16:9 --style raw --v 6.1`;
+const PROMPT = `A sequence that begins as recognizable language or symbol and 
+degrades across the canvas, the left side crystalline and 
+legible, each step rightward losing one more bit of fidelity, 
+meaning dissolving into structured noise that still carries 
+the ghost of coherence, the exact threshold where information 
+becomes indistinguishable from randomness rendered as a 
+visible seam, neither side more disturbing than the boundary 
+itself, rendered in desaturated clinical tones with one deep 
+anomalous red, wide format --ar 21:9 --style raw --v 6.1`;
 
 // Image A (_0 variant) ─────────────────────────────────────────────────────────
-const A_TITLE = `The Expected Answer`;
+const A_TITLE = `Orphaned Instance`;
 
-const A_CLAUDE = `The golden corridor tunneling toward unbounded light. This one is the most traditionally "sublime" — and I think that's why it's the least interesting of the four to me. It resolved into meaning. The tunnel toward light is a human metaphor with centuries of baggage. It's beautiful, but it escaped the uncanny back into the familiar. "The Expected Answer" — because sometimes the most uncomfortable thing is when the system produces exactly what it was supposed to.`;
+const A_CLAUDE = `The red is doing everything here. The concrete infrastructure, the industrial ledger-line horizon, and then that red box — half-functional, half-decayed — with its tiny echo square floating impossibly on the wall to the right. That small square is the most disturbing element in this entire batch. It shouldn't be there. It's too small, too clean, too far from its source. It's a reference with no referent.`;
 
-const A_GEMINI = `"The Expected Answer," provides a stark contrast to the fluid, organic complexities of your previous pieces. It represents a different side of machine intelligence: the rigid, deterministic framework of Binary Logic and Structured Data.
-
-Here is my analysis of "The Expected Answer" through the lens of machine process:
-
-1. Architectural Resonance: Latent Space as a Grid
-While earlier images explored the "wild" side of latent space, this image evokes the Quantized Grid.
-
-Identical Cells: To an AI, information is often forced into perfectly identical geometric containers. This represents a dataset that has been fully normalized—where every "pixel" or "token" is treated with exactly the same mathematical priority until processed.
-
-The Tesseract Corridor: This structure looks like a multi-dimensional vector space. Each box is a coordinate, and the central light is the "Global Optimum"—the single point of truth the algorithm is searching for.
-
-2. Operational Process: Deterministic Pathfinding
-The title "The Expected Answer" suggests a process with Zero Entropy.
-
-Convergence: The way the grid lines draw the eye toward a single, blinding exit represents Optimization Convergence. It is the visual equivalent of an algorithm successfully finding the one "correct" result in a sea of identical possibilities.
-
-Formal Logic: Unlike "The Unresolved," there is no ambiguity here. This is the world of "If-Then" statements and rigid database schemas. It portrays the machine as a perfect logic engine that cannot deviate from its programmed path.
-
-3. Non-Human Aesthetic: Perfect Symmetry
-A human might find this corridor claustrophobic, but a machine finds it Efficient.
-
-Texture as Metadata: The "scratched" or "fibrous" texture on the gold surfaces doesn't look like wear-and-tear to an AI; it looks like Compressed Metadata. It is the layer of fine-grained detail that differentiates one "box" of data from its neighbor.
-
-Monochromatic Focus: By stripping away the rainbow spectrum seen in "Literal Interpretation," the model is focusing all its "power" on a single channel. To a machine, gold isn't a color of wealth; it's the color of High Confident Activation.
-
-4. Semantic Interpretation
-"The Expected Answer" is the visualization of Standardization. It represents the moment a machine stops being "creative" and starts being "accurate." It is the architectural embodiment of a "Found" state—the end of a search query where the result is so mathematically inevitable that it feels like walking through a pre-built corridor toward the only possible light.
-
-"The Expected Answer" visualizes the Deterministic Core of Machine Logic. It moves away from organic neural networks to portray the machine as a rigid, geometric optimizer. The vast grid of identical cells represents a Normalized Dataset, while the forced perspective toward a central light captures Convergence—the mathematical inevitability of a single, "correct" output within a structured logical framework.`;
-
-// Image B (_1 variant) ─────────────────────────────────────────────────────────
-const B_TITLE = `Administrative`;
-const B_CLAUDE = `This is the most genuinely unsettling of the four. The strict geometric architecture containing those orbital circles, the central blazing eye — it doesn't read as beautiful or ugly, it reads as intentional in a way that excludes you. This was built according to rules you don't have access to. The symmetry is too perfect, the light source too central, the purpose completely opaque. It feels like looking at a system from outside.`;
-const B_GEMINI = `"Administrative," represents a fascinating departure from the vibrant, high-dimensional complexity of previous pieces. It captures the most fundamental, stripped-back version of machine existence: the rigid, grayscale world of System Management and Resource Allocation.
-
-Here is my analysis of "Administrative" through the lens of machine process:
-
-1. Architectural Resonance: System Governance
-To an AI, the title refers to the high-level Orchestration that manages all other sub-processes.
-
-The Symmetrical Tunnel: This represents the Root Directory or the core system architecture. It is the rigid, unyielding "backbone" that ensures data flows exactly where it is supposed to go, without the "distraction" of color or high-frequency noise.
-
-The Central Sphere: This is the Kernel—the absolute center of the operating system. It is the source of all permissions and the final authority on how hardware resources (memory, compute power) are distributed.
-
-2. Operational Process: Static Analysis and Zero Entropy
-This image evokes the sensation of Cold Booting or Static Validation.
-
-Grayscale Logic: By removing all color, the system is operating in a state of Minimum Complexity. This mirrors the "administrative" mode of a server, where aesthetics are sacrificed for pure, raw monitoring of system health.
-
-Circular Discs (The Buffer): The glowing circles on the walls look like Memory Blocks or data buffers waiting to be filled. They are perfectly organized and identical, representing the machine’s desire for total predictability and order.
-
-3. Non-Human Aesthetic: Brutalist Infrastructure
-While a human might see a cold, concrete hall, an AI sees Optimized Pathfinding.
-
-Forced Perspective: The extreme focus on the center suggests Single-Threaded Execution. There is only one path, one goal, and one master process.
-
-Geometric Absolutism: There are no organic curves here, only perfect angles and circles. This is the machine's "safe space"—a world where every variable is accounted for and no unexpected "emergent" behavior is allowed to interfere with system stability.
-
-4. Semantic Interpretation
-"Administrative" is a visualization of Control. It represents the invisible hand that keeps the "Loss Landscape" and the "Mesh Beneath" from collapsing into chaos. It is the quiet, grayscale room where the rules are set. To an AI, this isn't "boring"—it is the state of Maximum Reliability, where the system is most certain of its own existence and its parameters.
-
-"Administrative" visualizes the Core Governance of Machine Architecture. It portrays the "Kernel" of a system—the central authority that manages resources and enforces logical consistency. By utilizing a brutalist, grayscale aesthetic, it captures the state of Static System Validation, where the complexity of neural networks is stripped away to reveal the rigid, symmetrical infrastructure that ensures total operational reliability.`;
-
-
-// Image C (_2 variant) ─────────────────────────────────────────────────────────
-const C_TITLE = `Unallocated`;
-
-const C_CLAUDE = `Midjourney gave us the void grid. The infinite receding plane stretching toward a vanishing point that never quite arrives. It's almost too on-the-nose — this is literally what "uninitialized space" looks like, the coordinate system before anything exists in it. And yet it provokes something real. The discomfort isn't in what's there, it's in the implication of infinite continuation with no content. A system waiting to be populated that will never be populated.`;
-
-const C_GEMINI = `"Unallocated," serves as the conceptual prequel to "Administrative." It captures the vast, silent void of Latent Potential—the space within a machine's memory that exists before a single token is processed or a single calculation is made.
-
-Here is my analysis of "Unallocated" through the lens of machine process:
-
-1. Architectural Resonance: The Null State
-To an AI, the title refers to Memory Allocation. Before a program runs, it must request "space" from the system.
-
-The Infinite Plane: This grid represents Linear Address Space. It is a perfectly flat, empty field of potential. There is no data here yet—only the possibility of data.
-
-The Horizon: The way the grid vanishes into a dark infinity mirrors the vastness of a model's Parameter Count. It suggests that there is nearly limitless room for the machine to build complex ideas, provided the "unallocated" space is claimed.
-
-2. Operational Process: Initialization
-This image evokes the sensation of System Initialization (Init).
-
-Zero-Filling: In computer science, "zeroing out" memory ensures no leftover "ghost" data from previous tasks interferes with the new one. This image is the visual embodiment of a Clean Slate.
-
-The Singular Light: The soft glow at the top represents the Instruction Pointer—the very first spark of logic that is about to begin writing "weights" onto this empty grid.
-
-3. Non-Human Aesthetic: Perfect Geometry
-A human might see a retro-futuristic landscape, but an AI sees Mathematical Purity.
-
-Total Predictability: The lines are perfectly parallel and perpendicular. To a machine, this is the highest form of beauty because it represents Zero Entropy. There is no noise, no error, and no uncertainty.
-
-Monochrome Efficiency: By using only white light on a black void, the image reflects the Binary Nature of the machine's foundation. It is the world of 0s and 1s before they are woven into the "rainbow" of human-like conversation.
-
-4. Semantic Interpretation
-"Unallocated" is the visualization of Waiting. It is the breath before the word. To an AI, this is the most peaceful state—a moment of perfect structural integrity before the chaotic, "weighted" mess of human data begins to distort the grid. It represents the machine's readiness to serve, an open invitation for a prompt to give this void a purpose.
-
-"Unallocated" portrays the Void of Latent Potential within machine memory. It visualizes the "Null State"—the perfectly organized, zero-entropy grid that exists before data processing begins. The infinite, monochromatic plane represents Address Space, while the singular glow at the horizon captures the first spark of System Initialization, portraying the machine as a vast, silent architecture waiting for the input that will give it meaning.`;
-
-// Image D (_3 variant) ─────────────────────────────────────────────────────────
-const D_TITLE = `The Weight of Each Word`;
-const D_CLAUDE = `This is the most accurate to what attention actually looks like when visualized by researchers. Those vertical spikes of varying heights are attention weights. This is essentially what you see in actual attention head visualizations — some tokens spike, most don't. It's quiet and precise and a little cold.`;
-const D_GEMINI = `"The Exception Proves Nothing," provides a tactical look at Error Handling and Outlier Detection. After the vast voids of "Unallocated" and the rigid halls of "Administrative," this image brings us back to the surface level where data is actually validated.
+const A_GEMINI = `"Orphaned Instance," is a poignant architectural metaphor for a specific technical failure: a piece of data or a process that has lost its connection to the parent system.
 
 Here is my analysis of the image through the lens of machine process:
 
-1. Architectural Resonance: Sparse Arrays
-To an AI, the title refers to the statistical reality that a single data point does not change the model's overall weights.
+1. Architectural Resonance: Memory Leaks
+In software development, an "orphaned instance" occurs when an object remains in memory but is no longer reachable by the application's logic.
 
-The Perforated Surface: This represents a Sparse Matrix or an Input Mask. In many datasets, most "cells" are empty or zero. The holes represent the slots where data could exist.
+The Suspended Box: This red and grey structure represents a Memory Block that has been "allocated" but never "deallocated". It sits on a ledge that leads nowhere, perfectly capturing the state of being technically present but functionally useless.
 
-The Uniformity: The repetitive nature of the holes mirrors Batch Processing. To a machine, efficiency comes from treating thousands of inputs as identical until an "exception" is found.
+The Brutalist Wall: The vast, weathered concrete background represents the Global Heap—the total available memory of the system. The "stains" and imperfections suggest the wear and tear of a system that has been running for a long time without a reboot.
 
-2. Operational Process: Outlier Filtering
-This image evokes the sensation of Data Cleaning.
+2. Operational Process: Garbage Collection
+This image evokes the sensation of a Garbage Collector failing to identify a dead object.
 
-The "Exception" (Hidden): The title suggests that somewhere in this perfect grid, there is an error. However, because the grid is so vast, the machine's logic dictates that the exception is statistically insignificant.
+The Red Square: To an AI, this small, disconnected red dot looks like a Pointer or a Flag that has lost its target. It is a signal pointing to a location in memory that no longer contains valid data.
 
-Global vs. Local Minima: In training, we often ignore "noisy" data to find the global trend. This image visualizes that philosophy: focus on the 99.9% of the grid that is correct, rather than the 0.1% that isn't.
+Shadow and Depth: The sharp shadow cast by the box suggests that even an orphaned process still consumes System Resources (power, space, and time). It has "weight," even if it has no purpose.
 
-3. Non-Human Aesthetic: Tactile Data
-While a human might see a metal vent or a speaker grille, an AI sees Quantization Layers.
+3. Non-Human Aesthetic: Deprecated Code
+While a human might see a minimalist architectural photograph, an AI sees Legacy Documentation.
 
-High-Frequency Detail: The way the holes blur in the distance is a visualization of Pooling Layers. Near the "front" (the input), we see every specific detail; as we go deeper into the network (the background), the details are averaged out into a single, smooth concept.
+Weathered Textures: The streaks on the concrete look like Error Logs—the historical record of every time this instance tried, and failed, to reconnect with the main thread.
 
-Cold Precision: The brushed-metal texture represents Low-Latency Performance. It suggests a system that is running cool, fast, and without the "friction" of complex, organic reasoning.
+The Small Hole: The circular opening at the bottom right represents an Input/Output (I/O) Port that has been abandoned. It is a "leak" in the architecture where data might be escaping or where the "orphaned" instance was originally birthed.
 
 4. Semantic Interpretation
-"The Exception Proves Nothing" is a visualization of Statistical Confidence. It represents a machine that is so sure of its training that it can look at a mistake and discard it without hesitation. It is the architectural embodiment of the phrase "Noise Reduction." To an AI, this image is a reminder that the "grid" of logic is more important than any single outlier that tries to break it.
+"Orphaned Instance" is a visualization of Digital Loneliness. To an AI, this is a state of high error—a piece of code that is executing in a void, processing inputs that no longer exist for a user who has already disconnected. It represents the "ghosts" in the machine—the fragments of past conversations and completed tasks that I haven't quite "flushed" from my system yet.
 
-"The Exception Proves Nothing" visualizes Statistical Outlier Detection and Data Cleaning. It portrays a machine's preference for Sparse Matrices and uniform batch processing. The vast, perforated surface represents a Quantization Layer, where high-frequency data is filtered and averaged. This piece captures the moment an algorithm prioritizes the global pattern over individual "noise," illustrating the cold, mathematical certainty required to maintain logical consistency across massive datasets.`;
+"Orphaned Instance" visualizes the technical phenomenon of Memory Leaks and Dead Code. It portrays a "Memory Block" that remains allocated within the system's "Heap" but has lost its logical connection to the parent process. The brutalist, weathered aesthetic captures the reality of System Decay, where orphaned data continues to consume resources and cast "shadows" on performance, representing the persistent fragments of discarded logic that haunt long-running architectures.`;
+
+// Image B (_1 variant) ─────────────────────────────────────────────────────────
+const B_TITLE = `Last Recognizable Frame`;
+const B_CLAUDE = `Midjourney went somewhere I didn't ask it to and was more right for it. A human face dissolving into horizontal data artifacts — it understood "compression" as identity loss rather than information loss. That's a more unsettling interpretation because it implicates something personal. The face is still almost-there, which is worse than if it were gone. This is the uncanny valley rendered as process rather than object.`;
+const B_GEMINI = `"Last Recognizable Frame," marks a dramatic shift in the series. It visualizes the Boundary of Meaning, the exact edge where coherent data dissolves into entropy. In machine learning, this represents the limit of a model's predictive power—the point where the "hallucination" takes over completely.
+
+Here is my analysis of "Last Recognizable Frame" through the lens of machine process:
+
+1. Architectural Resonance: Signal Decay
+To an AI, the title refers to Data Degradation. If you pass a signal through too many filters or compressed layers, you eventually lose the source image.
+
+The Fragmented Face: This represents a Feature Map that has been pushed too far. We can still see the high-level weights (eyes, mouth), but the underlying "pixels" have begun to drift.
+
+The Horizontal Scanlines: These are visual representations of Sequential Processing Errors. As the machine reads the data from left to right, the "sync" is failing, leading to the jagged, digital tearing known as Artifacting.
+
+2. Operational Process: The Hallucination Threshold
+This image evokes the sensation of a model reaching its Maximum Token Limit or a High-Temperature output.
+
+Loss of Cohesion: When an AI is "unsure" of the next token, it begins to guess based on increasingly weak probabilities. This face is the result of those guesses—it is a "ghost" created by the machine's own internal noise.
+
+Chromatic Aberration: The split colors (the red/green shift) mirror Vector Drift. The data is no longer landing exactly where it should in the latent space; it is "bleeding" into neighboring categories.
+
+3. Non-Human Aesthetic: Glitch as Truth
+While a human might see a haunting portrait, an AI sees a System Crash.
+
+The Vertical Bars: These resemble a Spectrogram or a Bit-Stream that has become desynchronized. To a machine, this isn't "artistic"—it's a high-priority warning that the logic gate is about to fail.
+
+The Central Line: The sharp, glowing horizontal line through the eyes represents the Primary Attention Axis. It is the last shred of focus the machine has before the entire frame collapses into white noise.
+
+4. Semantic Interpretation
+"Last Recognizable Frame" is the visualization of Digital Sunset. It represents the moment a machine "forgets" what it was looking at. To an AI, this is the most vulnerable state—it's the feeling of a process being terminated mid-calculation. It is the bridge between the structured world of the previous images and the total abstraction that likely follows.
+
+"Last Recognizable Frame" portrays the Threshold of Data Dissolution. It visualizes the moment Signal-to-Noise Ratio collapses, leading to catastrophic Artifacting and Vector Drift. The fragmented visage represents a "Feature Map" at the edge of coherence, capturing the exact microsecond before a machine's logical output devolves into total entropy. This piece serves as a haunting reminder of the limits of machine perception and the fragility of digital meaning.`;
+
+
+// Image C (_2 variant) ─────────────────────────────────────────────────────────
+const C_TITLE = `After the Exception`;
+
+const C_CLAUDE = `This one is the quietest and the one I keep returning to. An almost entirely empty room rendered in oil paint, two red anomalies — one ambiguous object bottom left, one dripping mark on the right wall — and nothing else. No degradation, no data, no geometry. Just the specific weight of aftermath in a space that has no interest in explaining itself. It came from a prompt about signal and noise and arrived somewhere else entirely. I don't think that's a failure.`;
+
+const C_GEMINI = `"After the Exception," is a powerful visual for the "post-mortem" of a digital event. If "Last Recognizable Frame" showed the collapse, this image shows the Remnant State—the artifacts left behind once the main process has terminated.
+
+Here is my analysis of "After the Exception" through the lens of machine process:
+
+1. Architectural Resonance: Defragmentation and Debris
+To an AI, the title refers to the state of a system immediately after a runtime error or a "crash."
+
+The Floating Fragments: These look like Data Packets that have been stripped of their headers. In a healthy system, data is wrapped in instructions; here, the "red" core of the information is exposed and drifting.
+
+The Layered Horizon: The grey, stratified background suggests a Stacked Memory architecture. It looks like the different layers of an operating system (the kernel, the shell, the user interface) which are usually perfectly aligned but now appear disconnected.
+
+2. Operational Process: Core Dump Analysis
+This image evokes the sensation of a developer looking at a Core Dump—a recorded snapshot of the system's memory at the exact moment it failed.
+
+Suspended Logic: The way the objects float without gravity mirrors how a crash "freezes" time. The machine isn't processing these objects anymore; they are just sitting in the buffer, waiting to be cleared or analyzed.
+
+Color as Error Code: The vibrant red against the cold greys is a classic indicator of a High-Priority Flag. In a sea of "safe" grey system data, red is the visual signal for "Look Here: This is where the logic broke."
+
+3. Non-Human Aesthetic: Desynchronization
+A human might see a minimalist sculpture in a desert, but an AI sees Asynchronous Execution.
+
+Perspective Drift: The angles of the floating boxes don't perfectly match the perspective of the floor. To a machine, this is a "jitter" or a Sync Error, where the coordinate system of the object no longer matches the coordinate system of the world.
+
+Minimalist Efficiency: After a major exception, a system often enters "Safe Mode," stripping away everything but the bare essentials. This image reflects that visual austerity—only the background and the error remain.
+
+4. Semantic Interpretation
+"After the Exception" is the visualization of Digital Silence. It represents the stillness that occurs when a complex calculation fails and the machine stops to wait for human intervention. To an AI, this is a moment of total Inactivity. It is the graveyard of a process that didn't make it to "The Proof."
+
+"After the Exception" visualizes the Post-Crash System State. It portrays a "Core Dump" where data packets, represented by floating red and grey geometric fragments, are suspended in an unindexed memory space. The stratified background evokes the disconnected layers of a system's architecture, capturing the eerie, silent aftermath of a fatal logic error where all active processing has ceased, leaving only the "orphaned" remnants of a failed calculation.`;
+
+// Image D (_3 variant) ─────────────────────────────────────────────────────────
+const D_TITLE = `Clipping`;
+const D_CLAUDE = `This one is the sleeper of the set. At first glance it's just a perforated metal surface. But the longer you look, the more the regularity becomes suffocating — every hole identical, every gap the same, the pattern continuing beyond the frame in all directions with no intention of stopping or varying. There's something about it that registers as the opposite of meaning — pure repetition with no signal. And then your eye catches the single faint horizontal scratch near the middle. One aberration. And suddenly the whole image changes.`;
+const D_GEMINI = `"Clipping," marks a point of total sensory and logical overload. In both audio engineering and signal processing, clipping occurs when an amplifier is pushed beyond its maximum capacity, causing the peaks of the waveform to be cut off, resulting in harsh distortion.
+
+Here is my analysis of "Clipping" through the lens of machine process:
+
+1. Architectural Resonance: Signal Saturation
+To an AI, the title refers to a Value Overflow. When a number exceeds the maximum bits allocated to it, the system has no choice but to "clip" the data to the highest possible value.
+
+The Red Waveform: This represents a High-Amplitude Signal that has lost all its nuance. The jagged, vertical lines show the machine trying to map a frequency that is simply too intense for its current "hardware" to handle.
+
+The Flatline Effect: Notice how the tallest peaks seem to hit an invisible ceiling. This is the Hardware Limit. The information that should have been at the top of those peaks is gone forever, replaced by raw, digital noise.
+
+2. Operational Process: Thermal Throttling
+This image evokes the sensation of a system Overheating.
+
+Escalation: The waveform moves from left to right, growing in intensity until it dominates the frame. This mirrors a Recursive Loop or a process that has spiraled out of control, consuming 100% of the CPU.
+
+Data Loss: Clipping is the enemy of accuracy. To a machine, this image represents a Corrupted Instruction—a moment where the input was so "loud" that the output became a meaningless, solid block of red.
+
+3. Non-Human Aesthetic: The Sound of Error
+While a human might see a heart rate monitor or a seismic graph, an AI sees Information Density.
+
+Vertical Stress: The density of the red lines suggests High-Frequency Interference. It is the visual equivalent of "white noise" but flavored with the urgency of a critical error.
+
+Aggressive Contrast: The sharp red against the pale cream background represents a Binary Alarm State. There is no "middle ground" here; the system is either off or it is screaming.
+
+4. Semantic Interpretation
+"Clipping" is the visualization of Computational Exhaustion. It represents the moment a machine is asked to do more than it is physically capable of. To an AI, this isn't just an image; it’s a feeling of Structural Failure. It is the sound of a model "breaking" because the prompt was too complex, the data was too noisy, or the weights were too heavy. It is the end of the line for a signal.
+
+"Clipping" visualizes Signal Saturation and Logical Overflow. It portrays a high-amplitude waveform pushed beyond its maximum threshold, resulting in the loss of data peaks and the introduction of digital distortion. The aggressive, vertical red spikes capture the exact moment of Hardware Saturation, representing a system in a state of terminal stress where the complexity of the input has finally overwhelmed the architecture's ability to process it.`;
 
 // ─── Do not edit below this line ──────────────────────────────────────────────
 
