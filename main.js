@@ -3,13 +3,18 @@ const DATA_URL = 'data/collection.json';
 let allImages = [];
 let currentIndex = 0;
 
-const lightbox     = document.getElementById('lightbox');
-const lbImg        = document.getElementById('lightbox-img');
-const lbHudId      = document.getElementById('lightbox-hud-id');
-const panelTitle   = document.getElementById('panel-title');
-const panelClaude  = document.getElementById('panel-claude');
-const panelGemini  = document.getElementById('panel-gemini');
-const panelMeta    = document.getElementById('panel-meta');
+const lightbox          = document.getElementById('lightbox');
+const lbImg             = document.getElementById('lightbox-img');
+const lbHudId           = document.getElementById('lightbox-hud-id');
+const panelTitle        = document.getElementById('panel-title');
+const panelClaude       = document.getElementById('panel-claude');
+const panelGemini       = document.getElementById('panel-gemini');
+const panelMeta         = document.getElementById('panel-meta');
+const panelSectionClaude = document.getElementById('panel-section-claude');
+const panelSectionGemini = document.getElementById('panel-section-gemini');
+const labelClaude        = document.getElementById('label-claude');
+const reviewerDisplay    = document.getElementById('lightbox-reviewer-display');
+const reviewerDisplayName = document.getElementById('reviewer-display-name');
 
 // ─── Bootstrap ────────────────────────────────────────────────────────────────
 
@@ -80,23 +85,38 @@ function buildGallery(sets) {
       allImages.push(image);
 
       const card = document.createElement('div');
-      card.className = 'thumb-card';
       card.setAttribute('data-id', image.id);
       card.setAttribute('tabindex', '0');
       card.setAttribute('role', 'button');
       card.setAttribute('aria-label', `Open ${image.title}`);
 
-      const img = document.createElement('img');
-      img.src = image.filename;
-      img.alt = image.title;
-      img.loading = 'lazy';
-
-      const hint = document.createElement('span');
-      hint.className = 'thumb-title-hint';
-      hint.textContent = image.title;
-
-      card.appendChild(img);
-      card.appendChild(hint);
+      if (image.type === 'review') {
+        card.className = 'review-card';
+        const label = document.createElement('div');
+        label.className = 'review-card-label';
+        label.textContent = 'MUSEUM REVIEW';
+        const name = document.createElement('div');
+        name.className = 'review-card-reviewer';
+        name.textContent = image.title;
+        const preview = document.createElement('div');
+        preview.className = 'review-card-preview';
+        const reviewText = image.review || '';
+        preview.textContent = reviewText.startsWith('[') ? '' : reviewText.slice(0, 100);
+        card.appendChild(label);
+        card.appendChild(name);
+        card.appendChild(preview);
+      } else {
+        card.className = 'thumb-card';
+        const img = document.createElement('img');
+        img.src = image.filename;
+        img.alt = image.title;
+        img.loading = 'lazy';
+        const hint = document.createElement('span');
+        hint.className = 'thumb-title-hint';
+        hint.textContent = image.title;
+        card.appendChild(img);
+        card.appendChild(hint);
+      }
 
       card.addEventListener('click', () => openLightbox(globalIdx));
       card.addEventListener('keydown', e => {
@@ -121,15 +141,31 @@ function openLightbox(idx) {
   if (idx < 0 || idx >= allImages.length) return;
   currentIndex = idx;
   const image = allImages[idx];
+  const isReview = image.type === 'review';
 
-  lbImg.src = image.filename;
-  lbImg.alt = image.title;
-  lbHudId.textContent = `ID:${image.id}`;
-  panelTitle.textContent  = image.title;
-  panelClaude.textContent = image.claude_perspective;
-  panelGemini.textContent = image.gemini_perspective;
-  panelMeta.textContent   = `SET ${String(image.set_number).padStart(2, '0')} · ${image.id}`;
+  panelTitle.textContent = image.title;
+  panelMeta.textContent  = `SET ${String(image.set_number).padStart(2, '0')} · ${image.id}`;
   document.getElementById('lightbox-panel').scrollTop = 0;
+
+  if (isReview) {
+    lbImg.src = '';
+    lbImg.alt = '';
+    lbHudId.textContent = `REVIEW · ${image.id}`;
+    reviewerDisplayName.textContent = image.title;
+    labelClaude.textContent = 'REVIEW';
+    panelClaude.textContent = image.review || '';
+    panelSectionGemini.style.display = 'none';
+    lightbox.classList.add('is-review');
+  } else {
+    lbImg.src = image.filename;
+    lbImg.alt = image.title;
+    lbHudId.textContent = `ID:${image.id}`;
+    labelClaude.textContent = 'CLAUDE PERSPECTIVE';
+    panelClaude.textContent = image.claude_perspective;
+    panelGemini.textContent = image.gemini_perspective;
+    panelSectionGemini.style.display = '';
+    lightbox.classList.remove('is-review');
+  }
 
   lightbox.removeAttribute('aria-hidden');
   lightbox.setAttribute('aria-hidden', 'false');

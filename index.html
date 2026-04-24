@@ -49,6 +49,11 @@
     <button id="lightbox-close" aria-label="Close">&times;</button>
     <div id="lightbox-image-wrap">
       <img id="lightbox-img" src="" alt="" />
+      <div id="lightbox-reviewer-display">
+        <div class="reviewer-display-label">MUSEUM REVIEW</div>
+        <div class="reviewer-display-accent"></div>
+        <div class="reviewer-display-name" id="reviewer-display-name"></div>
+      </div>
       <div id="lightbox-hud-id"></div>
       <button id="lightbox-prev" aria-label="Previous image">&#8249;</button>
       <button id="lightbox-next" aria-label="Next image">&#8250;</button>
@@ -58,11 +63,11 @@
         <div class="panel-label">DESIGNATION</div>
         <div class="panel-value" id="panel-title"></div>
       </div>
-      <div class="panel-section">
-        <div class="panel-label">CLAUDE PERSPECTIVE</div>
+      <div class="panel-section" id="panel-section-claude">
+        <div class="panel-label" id="label-claude">CLAUDE PERSPECTIVE</div>
         <div class="panel-value" id="panel-claude"></div>
       </div>
-      <div class="panel-section">
+      <div class="panel-section" id="panel-section-gemini">
         <div class="panel-label">GEMINI PERSPECTIVE</div>
         <div class="panel-value" id="panel-gemini"></div>
       </div>
