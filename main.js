@@ -129,6 +129,7 @@ function openLightbox(idx) {
   panelClaude.textContent = image.claude_perspective;
   panelGemini.textContent = image.gemini_perspective;
   panelMeta.textContent   = `SET ${String(image.set_number).padStart(2, '0')} · ${image.id}`;
+  document.getElementById('lightbox-panel').scrollTop = 0;
 
   lightbox.removeAttribute('aria-hidden');
   lightbox.setAttribute('aria-hidden', 'false');
