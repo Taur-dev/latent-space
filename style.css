@@ -482,6 +482,10 @@ p { line-height: 1.6; }
   width: 40px;
   height: 56px;
   font-size: 22px;
+  background: rgba(8, 10, 12, 0.72);
+  border-color: var(--line-bright);
+  color: var(--text-primary);
+  backdrop-filter: blur(6px);
 }
 
 #lightbox-prev { left: 16px; }
